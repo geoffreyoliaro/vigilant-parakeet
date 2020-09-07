@@ -7,7 +7,7 @@ Please complete as much of the assignment as you can. If you are unable or do
 not have the time to complete the whole assignment, please just send us as much
 as you have managed to complete.
 
-For all of the tasks below, we'd like to see an answer in Python. However if
+For all of the tasks below, we'd like to see an answer in PHP. However if
 you would rather provide a similar solution in another language that better
 shows your programming facility, we will be happy to review it instead.
 
@@ -18,7 +18,7 @@ teams may also be members of teams.  Because teams can be used in most ways
 that People can, Teams and People are both represented through the Person
 class.
 
-The Person class (available in `person.py`) has these attributes:
+The Person class (available in `Person.php`) has these attributes:
 
 - `id` (a unique integer)
 - `displayname` (a string)
@@ -31,51 +31,68 @@ The Person class (available in `person.py`) has these attributes:
 Write a function that accepts a person and a list of all
 people/teams and returns a list of all the teams of which that
 person is a member. You can import the "people" list from
-`data1.py` to use as example data when writing your function.
+`data1.php` to use as example data when writing your function.
 
 This code (where your function is named `exercise1`)...
 
-``` python
->>> import data1
->>> print [t.displayname for t in exercise1(data1.alice, data1.people)]
-```
+``` php
+require_once('data1.php');
 
+$teams = [];
+$result = exercise1($alice, $people);
+foreach($result as $res) {
+    array_push($teams, $res->displayName);
+}
+
+echo($teams);
+```
 ...should result in this being printed:
 
-``` python
+``` php
 ['The A-Team', 'The C-Team']
 ```
+
 
 ## Task two
 
 Does your function produce the same results as expected in
-question 1 when you pass it the "people" list from `data2.py`
-and alice (also from `data2.py`)?  If not, modify your function
+question 1 when you pass it the "people" list from `data2.php`
+and alice (also from `data2.php`)?  If not, modify your function
 so that it works correctly given that data.
+
 
 ## Task three
 
 Write a function that gets all the people (not teams) who are
-direct and indirect members of a team.  Using `data2.py`, this code
-(where your function is named `get_people`)...
+direct and indirect members of a team.  Using `data2.php`, this code
+(where your function is named `get_members`)...
 
-``` python
->>> import data2
->>> print sorted(p.displayname for p in get_members(data2.c_team))
+``` php
+require_once('data2.php');
+
+$teams = [];
+$result = get_members($c_team);
+foreach($result as $res) {
+    array_push($teams, $res->displayName);
+}
+
+echo(sort($teams));
 ```
 
 ...should result in this being printed:
 
-``` python
+``` php
 ['Alice', 'Bob', 'Carlos', 'Charlie', 'Eve']
 ```
 
-Now look at `data3.py`.  Figure out what the correct answer should be for
-`get_members(data3.c_team)`, and make sure your function performs as you
+
+Now look at `data3.php`.  Figure out what the correct answer should be for
+`get_members($c_team)`, and make sure your function performs as you
 expect.
+
 
 ### Returning the assignment
 
 Please create a git repository from your work and return this repository in a
-zipped tar archive.
+zipped tar archive and shared via google-drive
 
