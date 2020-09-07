@@ -44,7 +44,7 @@ foreach($result as $res) {
     array_push($teams, $res->displayName);
 }
 
-echo($teams);
+echo (json_encode($teams));
 ```
 ...should result in this being printed:
 
@@ -76,7 +76,9 @@ foreach($result as $res) {
     array_push($teams, $res->displayName);
 }
 
-echo(sort($teams));
+sort($teams);
+
+echo json_encode($teams);
 ```
 
 ...should result in this being printed:
