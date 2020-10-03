@@ -6,7 +6,7 @@ class Person {
         $this->id = $id;
         $this->displayName = $displayName;
         $this->members = $members;
-        $this->isTeam = !is_null($members);
+        $this->isTeam = !is_null($members);        
     }
 
 }

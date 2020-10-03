@@ -17,13 +17,10 @@ $victor = new Person(11, 'Victor');
 $walter = new Person(12, 'Walter');
 
 $a_team = new Person(90, 'The A-Team', [$alice, $bob, $carlos]);
-$b_team = new Person(91, 'The B-Team', [$peggy, $trent, $victor]);
-$c_team = new Person(92, 'The C-Team', [$charlie, $eve, $a_team]);
-
-array_push($a_team->members, $b_team);
-array_push($b_team->members, $c_team);
+$b_team = new Person(91, 'The B-Team', [$peggy, $trent, $victor, $a_team]);
+$c_team = new Person(92, 'The C-Team', [$charlie, $eve, $a_team, $b_team]);
 
 $people = [$alice, $bob, $carlos, $carol, $charlie, $chuck, $dave, $eve, $mallory,
-           $peggy, $trent, $victor, $walter, $a_team, $b_team, $c_team]
+   $peggy, $trent, $victor, $walter, $a_team, $b_team, $c_team]
 
 ?>

@@ -23,5 +23,10 @@ $c_team = new Person(92, 'The C-Team', [$charlie, $eve, $a_team]);
 $people = [$alice, $bob, $carlos, $carol, $charlie, $chuck, $dave, $eve, $mallory,
            $peggy, $trent, $victor, $walter, $a_team, $b_team, $c_team];
 
+$my_a_team = [$a_team];
+$my_b_team = [$b_team];        
+$my_c_team = [$c_team];
+           
+
 
 ?>
